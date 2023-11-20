@@ -36,9 +36,14 @@ app.use("/get_user", require("./routes/users/get_user.js"));
 app.use("/login", require("./routes/login/login.js"));
 //register 
 app.use("/register", require("./routes/register/register.js"));
+//live
 
+app.use("/add_live",require("./routes/live/add_live.js"))
+app.use("/get_live",require("./routes/live/get_live.js"))
+app.use("/delete_live",require("./routes/live/delete_live.js"))
 
-
+//path image
+app.use("/image",express.static(path.join(__dirname,'images')))
 
 app.use(function (req, res, next) {
   next(createError(404));
