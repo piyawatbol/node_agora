@@ -10,7 +10,7 @@ router.delete("/", auth, async (req, res) => {
     if (!data) {
       return res.status(401).send("delete error");
     }
-    res.status(201).send("delete sucesss");
+    res.status(201).send({data : "delete success"});
   } catch (err) {
     console.log(err);
   }
